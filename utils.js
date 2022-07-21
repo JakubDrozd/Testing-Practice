@@ -25,6 +25,9 @@ export const reverseString = (string) => {
 };
 
 export const caesarCipher = (string, key) => {
+  if (key < 0) {
+    return "Key is invalid";
+  }
   let letters = string.split("");
   let newString = "";
   letters.forEach((letter) => {
