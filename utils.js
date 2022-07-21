@@ -36,7 +36,7 @@ export const caesarCipher = (string, key) => {
   return newString;
 };
 
-export const cipherLetter = (ch, key) => {
+const cipherLetter = (ch, key) => {
   ch = ch.toUpperCase();
   if (ch.charCodeAt(0) < 65 || ch.charCodeAt(0) > 90) {
     return ch;
@@ -46,4 +46,20 @@ export const cipherLetter = (ch, key) => {
     ch = ch + 64;
   }
   return String.fromCharCode(ch).toLowerCase().toString();
+};
+
+export const analyzeArray = (array) => {
+  array = array.sort((a, b) => a - b);
+  let arrayMin = array[0];
+  let arrayMax = array[array.length - 1];
+  let length = array.length;
+  let sum = array.reduce((sum, item) => sum + item, 0);
+  let average = sum / array.length;
+  let object = {
+    average: average,
+    min: arrayMin,
+    max: arrayMax,
+    length: length,
+  };
+  return object;
 };
