@@ -3,6 +3,7 @@ import {
   calculator,
   reverseString,
   caesarCipher,
+  analyzeArray,
 } from "./utils.js";
 
 it("Capitalize first letter of string", () => {
@@ -33,4 +34,13 @@ it("Caesar cipher", () => {
   expect(caesarCipher("defend the east wall of the castle", 1)).toBe(
     "efgfoe uif fbtu xbmm pg uif dbtumf"
   );
+});
+
+it("Analyze array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
